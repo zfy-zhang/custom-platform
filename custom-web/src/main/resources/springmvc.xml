@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+    <component-scan base-package="org.elisha.custom.repository,org.elisha.custom.service,org.elisha.custom.controller" ></component-scan>
+</beans>
