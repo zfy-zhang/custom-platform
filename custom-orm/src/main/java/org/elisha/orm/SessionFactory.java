@@ -6,11 +6,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
-* 回话工厂  
-* @author : KangNing Hu
-*/
-/**
- * @Description: 抽象的结果处理器
+ * @Description: 绘话工厂
  * @Author <a href="mailto:zfy_zang@163.com">Vincent</a>
  * @Modify
  * @since

@@ -3,11 +3,7 @@ package org.elisha.orm;
 import java.util.List;
 
 /**
-* sql包装  
-* @author : KangNing Hu
-*/
-/**
- * @Description: 抽象的结果处理器
+ * @Description: sql包装
  * @Author <a href="mailto:zfy_zang@163.com">Vincent</a>
  * @Modify
  * @since

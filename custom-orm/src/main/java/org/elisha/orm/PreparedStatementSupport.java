@@ -16,11 +16,7 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
-* 预编译支持类  
-* @author : KangNing Hu
-*/
-/**
- * @Description: 抽象的结果处理器
+ * @Description: 预编译支持类
  * @Author <a href="mailto:zfy_zang@163.com">Vincent</a>
  * @Modify
  * @since

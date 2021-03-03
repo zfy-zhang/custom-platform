@@ -5,11 +5,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 
 /**
-* 回话  
-* @author : KangNing Hu
-*/
-/**
- * @Description: 抽象的结果处理器
+ * @Description: 绘话
  * @Author <a href="mailto:zfy_zang@163.com">Vincent</a>
  * @Modify
  * @since

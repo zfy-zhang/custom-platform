@@ -10,11 +10,7 @@ import java.sql.ResultSet;
 import java.util.*;
 
 /**
-* 响应结果元信息  
-* @author : KangNing Hu
-*/
-/**
- * @Description: 抽象的结果处理器
+ * @Description: 响应结果元信息
  * @Author <a href="mailto:zfy_zang@163.com">Vincent</a>
  * @Modify
  * @since

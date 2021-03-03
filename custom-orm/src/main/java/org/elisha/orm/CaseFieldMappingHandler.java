@@ -8,9 +8,6 @@ package org.elisha.orm;
  */
 public class CaseFieldMappingHandler extends HumpFieldMappingHandler{
 
-
-
-
 	@Override
 	public String columnNameToFieldName(String columnName) {
 		return super.columnNameToFieldName(columnName.toLowerCase());

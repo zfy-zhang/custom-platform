@@ -4,12 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-* 基于占位符的sql解析
- * ///TODO 目前只实现基本解析
-* @author : KangNing Hu
-*/
-/**
- * @Description: 抽象的结果处理器
+ * @Description: 基于占位符的sql解析 // TODO 暂只实现基本解析
  * @Author <a href="mailto:zfy_zang@163.com">Vincent</a>
  * @Modify
  * @since

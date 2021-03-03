@@ -6,11 +6,7 @@ import java.sql.ResultSet;
 import java.util.Collection;
 
 /**
-* 简单的结果处理  
-* @author : KangNing Hu
-*/
-/**
- * @Description: 抽象的结果处理器
+ * @Description: 简单的结果处理
  * @Author <a href="mailto:zfy_zang@163.com">Vincent</a>
  * @Modify
  * @since

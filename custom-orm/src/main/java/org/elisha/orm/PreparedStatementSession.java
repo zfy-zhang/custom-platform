@@ -11,11 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
-* 预编译指令回话  
-* @author : KangNing Hu
-*/
-/**
- * @Description: 抽象的结果处理器
+ * @Description: 预编译指令绘话
  * @Author <a href="mailto:zfy_zang@163.com">Vincent</a>
  * @Modify
  * @since
