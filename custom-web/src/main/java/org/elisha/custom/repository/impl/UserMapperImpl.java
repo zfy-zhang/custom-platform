@@ -14,12 +14,12 @@ import java.util.Map;
  * @Modify
  * @since
  */
-@Mapper
-public class UserMapperImpl implements UserMapper {
-
-    @Override
-    public List<User> queryUserList(Map<String, Object> param) {
-
-        return new ArrayList<>();
-    }
-}
+//@Mapper
+//public class UserMapperImpl implements UserMapper {
+//
+//    @Override
+//    public List<User> queryUserList(Map<String, Object> param) {
+//
+//        return new ArrayList<>();
+//    }
+//}
