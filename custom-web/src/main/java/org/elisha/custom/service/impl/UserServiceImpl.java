@@ -6,11 +6,20 @@ import org.elisha.custom.repository.UserMapper;
 import org.elisha.custom.service.UserService;
 import org.elisha.orm.MapperBuild;
 import org.elisha.web.mvc.header.annotation.Autowired;
+import org.elisha.web.mvc.header.annotation.Component;
 import org.elisha.web.mvc.header.annotation.Service;
+import org.hibernate.query.internal.NativeQueryImpl;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @Description:
@@ -21,26 +30,15 @@ import java.util.Map;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserMapper userMapper;
+    private static Logger logger = Logger.getLogger(UserServiceImpl.class.getName());
 
-    public UserServiceImpl() throws ClassNotFoundException {
-        userMapper = MapperBuild.build(UserMapper.class);
-    }
+    @Resource(name = "jpa/entityManager")
+    private EntityManager entityManager;
 
-    @Override
-    public List<User> findUsers(String name) {
-        System.out.println("props is :"+name);
-        List<User> res = new ArrayList<>();
-//        res.add(new User("lu","1","123"));
-//        res.add(new User("ze","1","123"));
-//        res.add(new User("quan","1","123"));
-        return res;
-    }
-
-    @Override
-    public List<User> queryUserList(Map<String, Object> param) {
-        return new ArrayList<>();
+    @PostConstruct
+    public void init(){
+        logger.log(Level.INFO , "初始化" + entityManager);
+        System.out.println("初始化");
     }
 
     /**
@@ -49,7 +47,19 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public List<User> queryAll() {
-        return userMapper.queryAll();
+        return entityManager
+                .createNativeQuery("select  * from users" , User.class).unwrap(NativeQueryImpl.class)
+                .getResultList();
+    }
+
+    @Override
+    public List<User> findUsers(String name) {
+        return null;
+    }
+
+    @Override
+    public List<User> queryUserList(Map<String, Object> param) {
+        return null;
     }
 
     /**
@@ -58,9 +68,11 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public boolean register(User user) {
-        int i = userMapper.insertUser(user);
-        return i > 0 ;
+    public boolean register(@Valid User user) {
+        EntityTransaction transaction = entityManager.getTransaction();
+        entityManager.persist(user);
+        return true ;
+
     }
 
     @Override

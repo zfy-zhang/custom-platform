@@ -1,11 +1,13 @@
 package org.elisha.custom.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
 
-import java.util.Date;
+import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.Objects;
+
+import static javax.persistence.GenerationType.AUTO;
 
 /**
  * @Description:
@@ -13,16 +15,30 @@ import java.util.Objects;
  * @Modify
  * @since
  */
+@Entity
+@Table(name = "users")
 public class User {
 
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = AUTO)
+    @Min(0)
+    private Long id = 0L;
 
+    @Column(name = "name")
+    @NotNull
     private String name;
 
+
+    @Column(name = "password")
+    @Length(min = 6 ,max = 32)
     private String password;
 
+    @Column(name = "email")
+    @Email
     private String email;
 
+    @Column(name = "phone_number")
+    @Pattern( regexp = "^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\\d{8}$" , message = "手机号码格式错误")
     private String phoneNumber;
 
     public Long getId() {

@@ -36,6 +36,8 @@
         <commons-collections4.version>4.4</commons-collections4.version>
         <commons-lang3.version>3.9</commons-lang3.version>
         <fastjson.version>1.2.70</fastjson.version>
+        <hibernate.version>5.4.29.final</hibernate.version>
+        <hibernate.validator.version>5.1.0.Final</hibernate.validator.version>
 
         <!-- Maven Plugins 版本 -->
         <maven.compiler.version>3.8.1</maven.compiler.version>
@@ -154,6 +156,28 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-dbcp2</artifactId>
                 <version>${dbcp2.version}</version>
+            </dependency>
+
+
+            <!-- Hibernate ORM Core -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+
+            <!-- Hibernate JPA support -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+
+            <!-- Hibernate Validator -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.validator.version}</version>
             </dependency>
 
         </dependencies>

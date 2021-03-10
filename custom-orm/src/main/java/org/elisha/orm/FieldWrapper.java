@@ -1,5 +1,7 @@
 package org.elisha.orm;
 
+import org.elisha.orm.base.utiil.ReflectionUtils;
+
 import java.lang.reflect.Field;
 
 /**
@@ -34,13 +36,7 @@ public class FieldWrapper {
 	 * @param value
 	 */
 	public void setValue(Object value){
-		try {
-			field.setAccessible(true);
-			field.set(target , value);
-		}catch (Exception e){
-			throw new IllegalStateException(e);
-		}
-
+		ReflectionUtils.set(field , target , value);
 	}
 
 	/**

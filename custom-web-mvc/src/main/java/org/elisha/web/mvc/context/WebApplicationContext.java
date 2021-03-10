@@ -26,7 +26,7 @@ public class WebApplicationContext {
     String contexConfigLocation;
     List<String> classNameList = new ArrayList<>();
     // springioc容器
-    public Map<String,Object> iocMap = new ConcurrentHashMap<String,Object>();
+    public Map<String,Object> iocMap = new ConcurrentHashMap<>();
 
     public WebApplicationContext(String contextConfigLocation) {
         this.contexConfigLocation = contextConfigLocation;

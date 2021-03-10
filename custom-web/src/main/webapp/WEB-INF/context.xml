@@ -9,4 +9,19 @@
 			  driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
 			  url="jdbc:derby:db/user-platform;create=true" />
 
+	<!--ioc 扩展-->
+	<Resource name="ioc/commonAnnotationBeanPostProcessor" type="org.elisha.web.mvc.deal.CommonAnnotationBeanPostProcessor"
+			  auth="Container" factory="org.elisha.web.mvc.jndi.JNDIBeanFactory"
+			  description="deal common annotation"/>
+	<Resource name="ioc/beanValidationBeanPostProcessor" type="org.elisha.web.mvc.deal.validate.BeanValidationBeanPostProcessor"
+			  auth="Container" factory="org.elisha.web.mvc.jndi.JNDIBeanFactory"
+			  description="deal bean validate"/>
+
+
+	<!--mapper-->
+	<Resource name="jpa/entityManager" type="javax.persistence.EntityManager"
+			  auth="Container" description="jpa operation object" factory="org.elisha.web.mvc.jndi.EntityManagerFactory"
+			  persistenceUnitName = "emf" propertiesLocation = "META-INF/jpa.properties"
+	/>
+
 </Context>
