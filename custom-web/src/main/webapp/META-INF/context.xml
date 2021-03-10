@@ -9,6 +9,7 @@
 			  driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
 			  url="jdbc:derby:db/user-platform;create=true" />
 
+
 	<!--ioc 扩展-->
 	<Resource name="ioc/commonAnnotationBeanPostProcessor" type="org.elisha.web.mvc.deal.CommonAnnotationBeanPostProcessor"
 			  auth="Container" factory="org.elisha.web.mvc.jndi.JNDIBeanFactory"
@@ -23,5 +24,10 @@
 			  auth="Container" description="jpa operation object" factory="org.elisha.web.mvc.jndi.EntityManagerFactory"
 			  persistenceUnitName = "emf" propertiesLocation = "META-INF/jpa.properties"
 	/>
+
+	<Resource name="mapper/dmlMapper" type="org.elisha.custom.projects.user.web.DMLMapper"
+			  auth="Container" factory="org.elisha.web.mvc.jndi.MapperBeanFactory"
+			  description="database information repository"/>
+
 
 </Context>
